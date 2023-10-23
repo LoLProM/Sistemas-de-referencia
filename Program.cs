@@ -5,7 +5,7 @@ namespace Jose
     public enum TipoDCoordenadas { Geograficas, Cilindricas, Esfericas, Cartesianas }
     public abstract class Punto
     {
-        public TipoDCoordenadas Tipo { get;set; }
+        public TipoDCoordenadas Tipo { get; set; }
     }
     public class CooCartesiana : Punto
     {
@@ -16,7 +16,7 @@ namespace Jose
             Z = z;
             Tipo = TipoDCoordenadas.Cartesianas;
         }
-        
+
 
         public double X { get; }
         public double Y { get; }
@@ -24,14 +24,14 @@ namespace Jose
     }
     public class CooEsfericas : Punto
     {
-        public CooEsfericas(double modulo,  double cita,double omega)
+        public CooEsfericas(double modulo, double cita, double omega)
         {
-           Modulo  = modulo;
+            Modulo = modulo;
             Cita = cita;
             Omega = omega;
             Tipo = TipoDCoordenadas.Esfericas;
         }
-        
+
 
         public double Modulo { get; }
         public double Cita { get; }
@@ -39,14 +39,14 @@ namespace Jose
     }
     public class CooCilindrica : Punto
     {
-        public CooCilindrica(double modulo,  double omega,double z)
+        public CooCilindrica(double modulo, double omega, double z)
         {
-           Modulo  = modulo;
+            Modulo = modulo;
             Z = z;
             Omega = omega;
             Tipo = TipoDCoordenadas.Cilindricas;
         }
-        
+
 
         public double Modulo { get; }
         public double Z { get; }
@@ -54,24 +54,20 @@ namespace Jose
     }
     public class CooGeograficas : Punto
     {
-        public CooGeograficas(double coordenadasEO,  double coordenadasNS,char EoO,char noS)
+        public CooGeograficas(double coordenadasEO, double coordenadasNS, char EoO, char noS)
         {
-           CoordenadasNS  = coordenadasNS;
+            CoordenadasNS = coordenadasNS;
             CoordenadasEO = coordenadasEO;
             EsteoOeste = EoO;
             NoS = noS;
             Tipo = TipoDCoordenadas.Geograficas;
         }
-        
+
 
         public double CoordenadasNS { get; }
         public double CoordenadasEO { get; }
         public char EsteoOeste { get; }
         public char NoS { get; }
     }
-    public static class Convertir
-    {
-        public static 
-        
-    }
+
 }
