@@ -1,7 +1,6 @@
 ﻿using System;
 namespace Jose
 {
-
     public enum TipoDCoordenadas { Geograficas, Cilindricas, Esfericas, Cartesianas }
     public abstract class Punto
     {
@@ -16,41 +15,40 @@ namespace Jose
             Z = z;
             Tipo = TipoDCoordenadas.Cartesianas;
         }
-
-
+        
         public double X { get; }
         public double Y { get; }
         public double Z { get; }
     }
     public class CooEsfericas : Punto
     {
-        public CooEsfericas(double modulo, double cita, double omega)
+        public CooEsfericas(double modulo, double teta, double fi)
         {
             Modulo = modulo;
-            Cita = cita;
-            Omega = omega;
+            Teta = teta;
+            Fi = fi;
             Tipo = TipoDCoordenadas.Esfericas;
         }
 
 
         public double Modulo { get; }
-        public double Cita { get; }
-        public double Omega { get; }
+        public double Teta { get; }
+        public double Fi { get; }
     }
     public class CooCilindrica : Punto
     {
-        public CooCilindrica(double modulo, double omega, double z)
+        public CooCilindrica(double modulo, double fi, double z)
         {
             Modulo = modulo;
             Z = z;
-            Omega = omega;
+            Fi = fi;
             Tipo = TipoDCoordenadas.Cilindricas;
         }
 
 
         public double Modulo { get; }
         public double Z { get; }
-        public double Omega { get; }
+        public double Fi { get; }
     }
     public class CooGeograficas : Punto
     {
